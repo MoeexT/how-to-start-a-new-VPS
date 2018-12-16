@@ -5,4 +5,4 @@ ssr安装脚本及BBR加速器备份
 
 [SSR非官方网站](https://shadowsocks.be/)
 
-[BBR脚本非原帖](https://www.94ish.me/1635.html)
+[BBR脚本（非原帖）](https://www.94ish.me/1635.html)
