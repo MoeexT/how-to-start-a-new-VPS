@@ -15,6 +15,7 @@ Commands:
 
 General Options:
     -h, --help		Show help, wothout option.
+    -v, --version	Print the script version.
     -s, --save		Weather to keep the cache.
     -f, --flush-cache	Refresh the cache, and you can get the latest webpage
 
@@ -25,11 +26,15 @@ General Options:
 		""")
 
 
+def _show_version():
+	print("pymail.py 2.0.1")
+
+
 def get_options(argv):
 	weather_save = 'y'  # 默认保存
 	refresh = 'n'  # 默认不获取最新
 	try:
-		opts, args = getopt.getopt(argv[1:], "hs:f:", ["help", "save=", "flush-cache="])
+		opts, args = getopt.getopt(argv[1:], "hvs:f:", ["help","version", "save=", "flush-cache="])
 	except getopt.GetoptError:
 		print("""
 		\rOops! An ERROR happened.
@@ -39,6 +44,9 @@ def get_options(argv):
 	for opt, arg in opts:
 		if opt in ('-h', '--help'):
 			_show_usage()
+			exit(0)
+		elif opt in ('-v', '--version'):
+			_show_version()
 			exit(0)
 		elif opt in ('-s', '--save'):
 			weather_save = arg
